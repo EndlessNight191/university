@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            let prom = [
+                "Petr93",
+                "Johnny70",
+                "kj60",
+                "Kain7"
+            ]
+            
+
+            function isLowerCase(str) {
+                return str == str.toUpperCase();
+            }
+
+            function Default(prom){
+                // let arr = [];
+                // let res = '';
+                // for(i=0; i<prom.length; i++){
+
+                //     let counter = 0;
+                //     res += prom[i];
+
+                //     if(prom[i] === " " || prom[i] == prom[prom.length - 1]){
+                //             arr.push(res);
+                //             counter =+ 1
+                //             res = '';
+                //     }    
+          
+                // } - если вводить через prompt и как строку
+
+                // console.log(arr)
+                // for(i=0; i<arr.length; i++){
+
+                //     let res = arr[i][0]
+                //     let num = arr[i][arr[i].length-1] + arr[i][arr[i].length-2]
+
+                //     let nums = num / 1
+                    
+                //     if(nums == Number && isLowerCase(res)){
+                //         console.log(arr[i])
+                //     }
+
+                // } ДЛЯ СТРОЧНОГО ВВОДА
+
+                for(i=0; i<prom.length; i++){
+
+                    let res = prom[i][0] 
+                    let num = (prom[i][prom[i].length-2] + prom[i][prom[i].length-1]) / 1
+
+                    
+                    if(typeof num == "number" && num !== NaN && isLowerCase(res)){
+                        console.log(prom[i])
+                        console.log(num)
+                    }
+
+                }
+                
+            }
+
+
+            
+            function Regular(prom){
+                let res = /[A-Z]\w+\d\d/gm
+
+                for(i=0; i<prom.length; i++){
+                    console.log(prom[i].match(res))
+                }
+            }
+
+            console.log(Regular(prom))
+            console.log(Default(prom))
+        </script>
+    </body>
+</html>

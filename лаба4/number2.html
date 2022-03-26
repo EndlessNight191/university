@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<html class="no-js">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        <script>    
+            let prom = "Донецк - прекрасный город, который еще расцветет в будущем";
+
+
+            function asd(prom) {
+                let countTime = 0
+            var count = 1;
+            var res = '';
+            countTime++;
+            countTime++;
+            for (i = 0; i < prom.length; i++) {
+                if ((prom[i] == " " || prom[i] == "-" || prom[i] == ",") && // проверяем разделители
+                prom[i - 1].match(/\p{Alpha}/iu)) { // проверяем что предыдущий символ - буква
+                    res += '(' + count + ')';
+                    count += 1;
+                    countTime++;
+                    countTime++;
+                    }
+                res += prom[i];
+            }
+            if (prom[prom.length - 1].match(/\p{Alpha}/iu)) { // если последний символ был буквой - учитываем последнее слово
+                res += '(' + count + ')';
+                countTime++;
+            }
+                countTime++;
+            console.log(countTime + ' временная сложнасть')
+            return res;
+            }
+
+console.log(asd(prom))
+
+            /// метод string
+
+            let n = 1;
+            function metod2(prom) {
+                let countTime = 0
+                let m = prom.split(" ")
+                countTime++
+                let res = m.map((e,i)=>{
+                    countTime++
+                let nn = n;
+                    countTime++
+                    if(e.includes("-")) {
+                        countTime++
+                        return e
+                    }
+                    if(e.includes(",")){
+                        countTime++
+                        countTime++
+                    n++;
+                        return  `${e.slice(0,e.length-1)}(${nn})${e[e.length-1]}`;
+                    }    
+                    if(!e.includes("-")){
+                        countTime++
+                        countTime++
+                    n++;
+                        return  `${e}(${nn})`
+                    }
+            })
+            return res.join(" ")
+            }
+
+console.log(metod2(prom))
+
+        </script>
+    </body>
+</html>

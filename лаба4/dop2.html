@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script >
+
+let prom = "эта строкс работает"
+
+
+// function asd(prom) {
+//     let arr = []
+//     let res = "";
+
+//     for(i=0; i<prom.length; i++){
+//         res += prom[i];
+
+//         if((prom[i] == " " || prom[i] == prom[prom.length - 1]) && (res[0] !== res[res.length - 1])){
+//             arr.push(res)
+//             res = ''
+//         }else{
+//             res = ''
+//         }
+            
+
+//     }
+
+//     console.log(arr)
+//     console.log(arr.join(" "))
+
+// } - не работает
+
+    
+
+
+function metod(prom){
+    let endArr = []
+    let arrMetod = prom.split([" "])
+
+    for(i=0; i<arrMetod.length; i++){
+        if(arrMetod[i][0] !== arrMetod[i][arrMetod[i].length - 1]){
+            endArr.push(arrMetod[i])
+        }
+    }
+    console.log(arrMetod)
+    console.log(endArr.join(" "))
+}
+
+
+
+// console.log(asd(prom))
+console.log(metod(prom))
+        </script>
+    </body>
+</html>
+
+

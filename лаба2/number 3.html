@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let arr = [];
+        let countTime = 0
+        function fib(n) {
+        let a = 1;
+        countTime++
+        let b = 1;
+        countTime++
+          for (let i = 3; i <= n; i++) {
+               let c = a + b;
+                a = b;
+                b = c;
+                
+                if (b<=10000 && b >= 1000){
+                    arr.push(b);
+                    countTime++
+                    alert(b);
+                    console.log(arr);
+                }
+            }
+            let count = n*4
+            let timeLog = countTime + count
+            alert(timeLog + ' Временная сложнать')
+          alert("количество четырехзначных чисел в ряде Фибоначчи: " + arr.length);
+        
+}
+
+
+
+        console.log(fib(20))
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+    
+</body>
+</html>

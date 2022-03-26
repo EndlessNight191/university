@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        
+        <script>
+
+            // // /// 1
+            // function number1(){
+            // let xNumber = prompt("введите х", "");
+            
+            // for(i=0; i<xNumber.length; i++){
+            //     if(xNumber[i]== "."){
+            //         let d = xNumber[i+1];
+            //         alert(d)
+            //     }
+            // }return 1
+            // }console.log(number1())
+
+            // // // /// 2
+            // function number2(){
+            // alert((new Date()).toTimeString().substr(0, 5));
+            // return 1
+            // }console.log(number2())
+
+            // // /// 3
+            // function number3(){
+            // let hours = prompt("часы?", "");
+            // let minutes = prompt("минуты?", "");
+            // let seconds = prompt("секунды?", "");
+
+            // let resultMin = (hours*60) + minutes + (seconds/60);
+            // let gradus = (resultMin/2)/1000;
+            // let Mgradus = gradus;
+            // alert("Стрелка прошла" + Mgradus.toFixed(2) + "градусов");
+            // return 1
+            // }console.log(number3())
+            
+
+            // // ///4
+            // function number4(){
+            // let a = 1;
+            // let b = 2;
+            
+            // a = a + b; b = a - b; a = a - b;
+            // return a
+            // }console.log(number4())
+
+            // // ///5
+            // function number5(){
+            // let oneKatet = prompt("1 катет", "");
+            // let twoKatet = prompt("2 катет", "");
+
+            // let S = (oneKatet*twoKatet)/2;
+
+            // let gip = Math.hypot(oneKatet, twoKatet); 
+            // let Per = oneKatet + twoKatet + gip;
+            // return 1
+            // }console.log(number5())
+
+            ///6 ///////////////////////// СВЕРХУ ПРОВЕРЕНО!!!!!!!!!!!!!!!!!! 
+
+            
+            function number6(){
+                let sum = prompt("введите числа  (6) задание", "");
+                var result = 1;
+
+                for(i=0; i<sum.length; i++){
+                    result =+ result * sum[i];
+                }return result 
+                console.log(result)
+            }console.log(number6())
+            
+            ///7
+            function number7(r = 0){
+            let numbers = +prompt("введите числа", "");
+            // if(!numbers) return r;
+            // r =  r * 10  + numbers % 10;
+            // // return reverse(Math.floor( numbers / 10), r);
+
+            alert(('' + numbers).split('').reverse().join(''));
+            return 0
+            }
+            console.log(number7());
+
+            ///8
+            function number8 (){
+            let Ax = +prompt("введите х", "");
+
+            let results = (((3*Ax - 5)*Ax + 2)*Ax - 1)*Ax + 7;
+            alert(results);
+            return results
+            }console.log(number8())
+
+            ///9
+            function number9(){
+                let a1 = 1;
+                let a2 = 2;
+                let a3 = 1;
+
+                let b1 = 1;
+                let b2 = -5;
+                let b3 = 2;
+
+                let c1 = 3;
+                let c2 = -1;
+                let c3 = -5;
+
+                let d1 = 6;
+                let d2 = 5;
+                let d3 = -11;
+
+                
+                let mainDeterminant = a1*(b2*c3-b3*c2)-b1*(a2*c3-a3*c2)+c1*(a2*b3-a3*b2);
+
+                let detx = d1*(b2*c3-b3*c2)-b1*(d2*c3-a3*c2)+c1*(d2*b3-d3*b2);
+                let dety = a1*(d2*c3-d3*c2)-d1*(a2*c3-a3*c2)+c1*(a2*d3-a3*d2);
+                let detz = a1*(b2*d3-b3*d2)-b1*(a2*d3-a3*d2)+d1*(a2*d3-a3*d2);
+
+                let x = detx/mainDeterminant;
+                let y = dety/mainDeterminant;
+                let z = detz/mainDeterminant;
+
+                console.log(x,y, z)
+            }
+            console.log(number9())
+
+            ///dop2
+
+            function dop(){
+                let a = 3;
+                let x = 7;
+                let b = 10;
+                const e = 2.7;
+
+                let z = Math.sqrt(a*x*(Math.sin(2*x)+(Math.pow(e, (-2)*x))*(x+b)));
+
+                let w = Math.pow(Math.cos(Math.pow(x, 3)), 2) - x/Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+
+                console.log("w равняется:" + w.toFixed(4) + "      z равняется:" + z.toFixed(4));
+            }console.log(dop())
+        </script>
+    </body>
+</html>

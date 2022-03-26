@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            let countTime = 0
+    function Determinant(A){  
+        var n = A.length, subA = [], detA = 0;
+        countTime++
+        countTime++
+        countTime++
+        if (n==1) return A[0][0];
+        if (n==2) return (A[0][0]*A[1][1]-A[0][1]*A[1][0]);
+        if (n==3)
+        { return ((A[0][0]*A[1][1]*A[2][2]+A[0][1]*A[1][2]*A[2][0]+A[0][2]*A[1][0]*A[2][1])
+                    -(A[0][0]*A[1][2]*A[2][1]+A[0][1]*A[1][0]*A[2][2]+A[0][2]*A[1][1]*A[2][0]));
+        }
+
+        for (i=0; i<n; i++){
+            countTime++
+             for (h=0; h<n-1; h++) subA[h]=[]; // заполнение новой матрицы строками
+            countTime++
+                for (a=1; a<n; a++){
+                    countTime++
+                    for (b=0; b<n; b++){
+                        countTime++
+                        if (b<i)       subA[a-1][ b ] = A[ a ][ b ];
+                        else if (b>i)  subA[a-1][b-1] = A[ a ][ b ];
+                        }
+                    }
+            var sign = (i%2==0) ? 1 : -1;
+            countTime++
+            detA += sign * A[0][i] * Determinant(subA);
+            countTime++
+            }
+
+        return detA; 
+}
+console.log(countTime + ' временная сложнасть')
+console.log(Determinant( [
+    [3,-4,6,23],
+    [-11,71,0,31],
+    [-4,-7,19,-35],
+    [-41,17,-19,-35]
+] ))
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+
+            //// 1 ЗАДАНИЕ!!!!!!!!!!!
+
+
+            const abc = "abcdefghijklmnopqrstuvwxyz", t = {};
+            for (let i = 0, j = abc.length; j;) t[abc.charAt(i++)] = abc.charAt(--j);
+            const atbash = s => s ? (t[s.charAt(0)] || s.charAt(0)) + atbash(s.slice(1)) : s;
+
+            console.log(atbash("hello world" + " - 1 ШИФР"));
+
+
+            /// 2 Задание
+                // переменные для исходного сообщения, зашифрованного и ключа шифрования
+                var input, output,key;
+                // служебные переменные для шифра
+                var inp, k;
+
+                function getRandomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min)) + min;
+                }
+
+                // запрашиваем текст, который будем шифровать
+                input = "띱兺췴౅䪼雙腷尝ꜷၕ"
+                // запрашиваем ключ шифрования
+                key = "덮唺짌ࡷ争銛腛尽ꌆᐕ"
+
+                // если длина ключа меньше длины сообщения — говорим пользователю и генерируем свой ключ
+                if ((key.length) < (input.length)) {
+                    alert("Ключ короче сообщения, это небезопасно. Скопируйте новый сгенерированный ключ из консоли браузера.");
+
+                    // в самом начале ключ будет пустой
+                    key = "";
+                    // генерируем новый ключ такой же длины, как и сообщение
+                    for (var i = 0; i < input.length; i++) {
+                        key += String.fromCharCode(getRandomInt(0,66535));
+                    }
+
+                    // выводим новый ключ шифрования
+                    console.log("Скопируйте новый ключ ↓");
+                    console.log(key);
+                }	
+
+                // шифруем сообщение
+                output = "";
+                for (i = 0; i < input.length; i++) {
+
+                    // берём цифровое значение очередного символа в сообщении и ключе
+                    inp = input.charCodeAt(i);
+                    k = key.charCodeAt(i);
+                    // и применяем к ним исключающее или — XOR
+                    output += String.fromCharCode(inp ^ k); 
+                }
+
+                // выводим результат шифрования
+                console.log("Результат работы алгоритма №2 ↓");
+                console.log(output);
+
+
+                /// 3 ЗАДАНИЕ!!!
+
+                let word = "пример маршрутной перестановки"
+                let keys = "31425"
+
+                function perestanovka(word, keys){
+
+                    let stroke = "";
+                    let arr = [
+
+                    ]
+                    let count = 0
+                    arr.push([])
+                    
+                    for(i=0; i<keys.length; i++){
+
+                        for(k=0; k<=keys.length; k++){
+                            arr[i].push(word[count])
+                            count++
+                            arr.push([])
+                        }
+                    }
+
+                    for(i=0; i<arr.length; i++){
+                        for(k=arr[i].length - 1; k=>0; k--){
+                            stroke.push(arr[i][k])
+                        }
+                    }
+
+                    return stroke
+                }
+
+                console.log(perestanovka(word, keys))
+
+        </script>
+    </body>
+</html>

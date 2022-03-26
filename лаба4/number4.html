@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+
+            var array = [
+                "вьвь.com.",
+                "вьвь.comsd sdaSD",
+                " ASDASD GOOGLE.com, лучший сайт",
+                "vk.com - соцсеть",
+                "мой адрес - ps.com@dkdk",
+                "конечно это оправдывает тебя, ты же не специально это сделал.com",
+                "фывфывфыв",
+            ] 
+            console.log(array[5][array[5].length])
+
+
+            function metod1(array){
+                let countTime = 0
+                let countSpace2=[]
+                countTime++
+                for(i=0; i<array.length; i++){
+                    if(array[i].includes(".com ") || array[i].includes(".com,") || array[i].includes(".com.") || (array[i].includes(".com") && (array[i][array[i].length] === false))){
+                        console.log(array[i])
+                    }
+
+                    let length = array[i].split(" ").length - 1;
+                    countSpace2.push(length)
+                    countTime++
+                    countTime++
+
+                }
+
+                let max = Math.max.apply(null, countSpace2) //  максимальное число в массиве(его индекс
+                let index = countSpace2.indexOf(max)
+                countTime++
+                countTime++
+                console.log(countTime+array.length + ' временная сложнасть')
+                console.log(array[index] + " - НАИБОЛЕЕ КОЛ-ВО ПРОБЕЛОВ") 
+            }
+            console.log(metod1(array))
+
+
+            function com(array){
+                let countTime = 0
+
+                let arr = [];
+                let countSpace = [];
+                let res = '';
+                let com = '';
+                countTime++;
+                countTime++;
+                countTime++;
+                countTime++;
+
+                for(i=0; i<array.length; i++){
+                    var arr2 = []
+                    let counter = 0;
+                    countTime++;
+                    countTime++;
+                    for(k=0; k<array[i].length; k++){
+                        res += array[i][k];
+                        countTime++;
+                        countTime++;
+                        if(array[i][k] == " "){
+                            arr2.push(res);
+                            res = '';
+                            counter += 1;
+                            countTime++;
+                            countTime++;
+                            countTime++;
+                        }else{
+                            arr2.push(res)
+                            countTime++;
+                        } 
+                    }
+                
+
+                    for(k=0; k<arr2.length; k++){
+                        let com = arr2[k];
+                        let res2 = '';
+                        let res1 = '';
+                        countTime++;
+                        countTime++;
+                        countTime++;
+
+                        for(l=com.length - 4; l < com.length; l++){
+                            res1 = res1 + com[l];
+                            countTime++;
+                        }
+
+                        if(res1 == ".com" && com.length === false){
+                            console.log(array[i]);
+                            countTime++;
+                        }
+                        
+
+                        for(j=com.length - 5; j < com.length; j++){
+                            countTime++;
+                            res2 = res2 + com[j];
+                        }
+                        countTime++;
+                        if(res2 == ".com " || res2 == ".com." || res2 == ".com,"){
+                            countTime++;
+                            console.log(array[i])
+                        }
+
+                        
+    
+                    }
+                    countTime++;
+                    countSpace.push(counter)
+                }
+                countTime++;
+                countTime++;
+                let max = Math.max.apply(null, countSpace)
+                let index = countSpace.indexOf(max)
+                console.log( countTime + ' временная сложнасть')
+                console.log(`${array[index]} - Макс количество проблеов`)
+
+            }
+
+            // console.log(com(array)) 
+
+
+
+        </script>
+    </body>
+</html>

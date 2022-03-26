@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+let N = +prompt("введите число", '');
+
+
+
+        function asd(N){
+                let countTime = Math.pow(N, 3)
+                for(x=0; x<=N; x++){
+                     let xa= Math.pow(x, 3);
+
+                      for(y=0; y<=N; y++){
+                         let ya= Math.pow(y, 3);
+
+                            for(z=0; z<=N; z++){
+                                let za= Math.pow(z, 3);
+
+                                var sum = xa + ya + za;
+
+
+                                if(sum == N){
+                                count = 0;
+                                var count =+ 1;
+                                countTime++
+                                    countTime++
+                                }
+
+                            };
+                        };
+                        
+                    };
+                    if(count == 0) {
+                        alert("No such combinations!")
+                    }
+            alert(countTime + ' временная сложнасть')
+             return count
+        }
+        let result = asd(N)
+
+        console.log(result)
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

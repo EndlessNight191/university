@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            let prom = "один два три"
+
+
+            let arr2 = prom.split(' ');
+            let metod2Reverse = arr2.reverse(); //// с помощью методов string, так же надо преобразовать в строку уже отсортированный массив
+            // console.log(metod2Reverse)
+
+
+
+
+
+
+            let countTime = 0
+            function perestanovka(prom){
+                var arr = [];
+                countTime++
+                arr.push([]);
+                countTime++
+                let count = 0; // индекс подмассива
+                countTime++
+                for(i=0; i<prom.length; i++){
+                    countTime++
+                  if(prom[i] !== " "){
+                    arr[count].push(prom[i])
+                      countTime++
+                  }else{
+                      count++;
+                      countTime++;
+                      arr.push([]);
+                      countTime++;
+                      arr[count-1].unshift(prom[i]);
+                      countTime++;
+                  }
+                }
+                
+                for(i=arr.length-1; i>=0; i--){
+                    let res = ''
+                    countTime++;
+                    for(k=0; k<arr[i].length; k++){
+                        res += arr[i][k]
+                        countTime++;
+                    }
+                }
+                console.log(arr)
+                newArray = []
+
+                for(i=arr.length-1; i>=0; i--){
+                    let res = ''
+                    countTime++;
+                    for(k=0; k<arr[i].length; k++){
+                        countTime++;
+                        res += arr[i][k]
+                    }
+                    countTime++;
+                    newArray.push(res)
+                }
+                console.log(countTime + ' временная сложнасть')
+                console.log(newArray.join(''))
+            }
+
+            console.log(perestanovka(prom))
+
+
+
+
+
+            // function perestanovka(prom){
+            //     let arr = [];
+            //     var res = '';
+            //     for (i = 0; i < prom.length; i++) {
+            //         if ((prom[i] == " " || prom[i] == "-" || prom[i] == ",") && // проверяем разделители
+            //         prom[i - 1].match(/\p{Alpha}/iu)) { // проверяем что предыдущий символ - буква
+            //             arr[i].push(res);
+            //             res = '';
+            //         }
+            //         if (i == prom.length - 1){
+            //             res += prom[i];
+            //             arr.push(res);
+            //         }
+            //         res += prom[i];
+            //     }
+
+            //     let result = ''
+            //     for(i=0; i<arr.length; i++){
+            //         result = result + arr[i];
+            //     }
+                
+            //     console.log(result)
+            // }
+
+            // console.log(perestanovka(prom))
+
+
+
+            
+        </script>
+    </body>
+</html>

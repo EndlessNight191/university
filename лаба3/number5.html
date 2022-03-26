@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        <script>
+
+            let OneArr = [
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+            ];
+
+            let TwoArr = [
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+                [1, 2, 3, 4, 5],
+            ];
+
+            
+
+            // function Matrici(OneArr, TwoArr){
+
+            //     let SumArr = [
+            //         [],
+            //         [],
+            //         [],
+            //         [],
+            //         [],
+            //     ];
+                
+            //     for(i=0; i<OneArr.length; i++){
+            //         let PodArr = OneArr[i];
+
+            //                 for(j=0; j<TwoArr.length; j++){
+            //                     let PodTwoArr = TwoArr[j];
+
+            //                         for(c=0; c<OneArr.length; c++){
+            //                             var elemmatrici = 0;
+            //                             let SumElement = PodArr[c] * PodTwoArr[i];
+            //                             elemmatrici = elemmatrici + SumElement;
+                                        
+
+            //                             }
+            //                     let PodSumArr = SumArr[i];
+            //                     PodSumArr.push(elemmatrici)      
+            //                 }
+
+            //     }
+            //                 return SumArr
+            // } console.log(Matrici(OneArr, TwoArr))
+
+
+            function multiplyMatrix(OneArr,TwoArr){
+                var rowsA = OneArr.length, colsA = OneArr[0].length,
+                    rowsB = TwoArr.length, colsB = TwoArr[0].length,
+                    SumArr = [];
+
+                if (colsA != rowsB) return false;
+
+                for (var i = 0; i < rowsA; i++) SumArr[i] = []; // заполнение массива строками
+
+                for (var k = 0; k < colsB; k++){
+                 for (var i = 0; i < rowsA; i++){
+                     var temp = 0;
+                        for (var j = 0; j < rowsB; j++){
+                            temp += OneArr[i][j]*TwoArr[j][k];
+                            SumArr[i][k] = temp;
+                        }
+                    }
+                }
+                console.log(5 + rowsA + (colsB * rowsA *(rowsB * 2)) + ' временная сложнать')
+                return SumArr;
+            }console.log(multiplyMatrix(OneArr, TwoArr));
+                    
+                
+
+                
+            
+
+    
+
+            
+
+
+
+
+
+        </script>
+    </body>
+</html>

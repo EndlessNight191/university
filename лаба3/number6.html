@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            let n = 10
+            let arr = [];
+
+            function pol(n){
+                for(i=1; i<n; i++){
+                    arr.push(i);
+                }
+                console.log(n + ' времееная сложнасть')
+            };
+
+            function sumIterative(arr){
+                var elem = 0;
+                for(j=0; j<arr.length; j++){
+                    elem = elem + arr[j];
+                    
+                }
+                console.log(arr.length + 1 + ' времееная сложнасть')
+                return elem
+            };
+
+            let reverseCount = 0
+            function sumRecursive(arr, sum = 0, i = 0) {
+                if (arr[i]) {
+                    reverseCount++
+                    return sumRecursive(arr, sum + arr[i], i + 1)
+                } else {
+                    return sum
+                }
+                console.log(reverseCount + ' временная сложнасть')
+            };
+
+            function minIterative(arr){
+               let minElemen = Math.min(...arr);
+               console.log(1 + ' временная сложнасть')
+                return minElemen;
+            };
+
+            let countTime = 0
+            function minRecursive(arr){
+                var l = arr.length;
+                countTime++
+                if(l === 1) return arr[0];
+                var a = arr.pop(),
+                    b = arr[l-2];
+                countTime++
+                countTime++
+                if(a < b) {
+                    arr.pop();
+                    arr.push(a);
+                    countTime++
+                    countTime++
+                }
+                return minRecursive(arr);
+            }
+            console.log(countTime + ' временная сложнасть')
+
+            console.log(pol(10));
+            console.log(sumIterative(arr));
+            console.log(sumRecursive(arr));
+            console.log(minIterative(arr));
+            console.log(minRecursive(arr));
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

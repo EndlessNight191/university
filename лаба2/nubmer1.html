@@ -1,0 +1,61 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+    <script>
+let countTime = 0
+let a = +prompt("введите a", '');
+countTime++
+let b = +prompt("введите b", '');
+countTime++
+let c = +prompt("введите c", '');
+countTime++
+
+        let calculate = (a, b, c) => {
+        if(a === 0){
+            alert("нет корня")
+            countTime++
+        };
+
+        let D = b * b - 4 * a * c;
+        countTime++
+        if(D < 0){
+            let d2 = -D;
+            countTime++
+            let res = (-b/ (2 * a));
+            countTime++
+            let result = (`первый корень: ${res} + ${Math.sqrt(d2)}i  второй корень: ${res} - ${Math.sqrt(d2)}i`);
+            countTime++
+            alert(result);
+            countTime++
+    }
+
+    if(D === 0){
+        let res = (-b + Math.sqrt(D)) / (2 * a);
+        countTime++
+        alert(res)
+        countTime++
+    }
+    else if(D > 0){
+        let res = ((-b + Math.sqrt(D)) / (2 * a));
+        countTime++
+        let res2 = ((-b - Math.sqrt(D)) / (2 * a));
+        countTime++
+        let result = (`первый корень: ${res} второй корень: ${res2}`);
+        countTime++
+        alert(result);
+        countTime++
+    }
+    console.log(countTime + 'Временная сложнасть')
+}
+
+console.log(calculate(a, b, c))
+
+
+ 
+    </script>
+</body>
+</html>

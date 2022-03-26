@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            let arr = [
+                "Gentle Giant – Free Hand [6:15]",
+                "Supertramp – Child Of Vision [07:27]",
+                "Camel – Lawrence [10:46]",
+                "Yes – Don’t Kill The Whale [3:55]",
+                "10CC – Notell Hotel [04:58]",
+                "Nektar – King Of Twilight [4:16]",
+                "The Flower Kings – Monsters & Men [21:19]",
+                "Focus – Le Clochard [1:59]",
+                "Pendragon – Fallen Dream And Angel [5:23]",
+                "Kaipa – Remains Of The Day [08:02]",      
+            ]
+
+            
+            let arr2 = [
+
+            ]
+
+
+            function Trek(name, time) {
+            this.name = name;
+            this.time = time;
+            }
+
+            function asd(arr){
+
+            
+
+                for(i=0; i<arr.length; i++){
+                    let name = '';
+                    let time = '';
+
+                    for(k=0; arr[i][k] !== "["; k++){
+                        name += arr[i][k]
+                    }
+
+                    for(j=name.length + 1; j<arr[i].length - 1; j++){
+                        time += arr[i][j]
+                    }
+
+
+                    let track = new Trek(name, time);
+                    arr2.push(track);
+
+                }
+            }
+
+
+            function sum(arr2){
+                 var sum = 0;
+
+
+                 /// подсчет суммарного и перевод строки в секунды числового значения
+                for(i=0; i<arr2.length; i++){
+                    
+
+                    if(arr2[i].time.length - 1 == 4){
+                            let times = arr2[i].time[0] + arr2[i].time[1]
+                            let secMinut = (times*60)
+                            let seconds = Number(arr2[i].time[3] + arr2[i].time[4])
+                            arr2[i].time = secMinut + seconds
+                    }else if(arr2[i].time.length - 1 == 3){
+                            let secMinut = arr2[i].time[0] * 60
+                            let seconds = Number(arr2[i].time[2] + arr2[i].time[3])
+                            arr2[i].time = secMinut + seconds
+                        }
+                    
+                    sum += arr2[i].time
+
+                    let minutes = Math.floor(sum/60);
+                    let seconds = sum % 60;
+                    var formatted = minutes + ':' + seconds;
+                }
+
+                console.log("общее время: " + formatted);
+
+
+                ///пара песен
+                let differenceArray = []
+
+                for(i=0; i<arr2.length - 1; i++){
+                   let difference = arr2[i].time - arr2[i+1].time
+
+                   differenceArray.push(Math.abs(difference))
+                }
+
+                let minElem = Math.min.apply(null, differenceArray)
+                let index = differenceArray.indexOf(minElem);
+
+                if(index){
+                    console.log(arr2[index])
+                    console.log(arr2[index + 1])
+                }
+
+                console.log(minElem + " секунд - Минимальная разница во времени")
+
+                /// сортировка
+                let MinTime = arr2.sort(function (a, b){
+                            if (a.time > b.time) {
+                                return 1;
+                            }
+                            if (a.time < b.time) {
+                                return -1;
+                            }
+                            
+                            return 0;
+                            });
+
+
+                //// перевод секунды в минуты
+                for(i=0; i<MinTime.length; i++){
+                    let minutes = Math.floor(MinTime[i].time/60);
+                    let seconds = MinTime[i].time % 60;
+                    let formatted = minutes + ':' + seconds;
+
+                    MinTime[i].time = formatted
+                }
+
+                console.log(MinTime[0])
+                console.log(MinTime[MinTime.length - 1])
+            }
+
+
+
+
+
+
+
+
+
+console.log(asd(arr))
+console.log(sum(arr2))
+
+
+
+
+        </script>
+    </body>
+</html>
