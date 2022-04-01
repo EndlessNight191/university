@@ -83,5 +83,9 @@ function name(word, string){
 }
 
 
+function boyerMure(string, podString){
+
+}
+
 
 console.log(boyer(word, string))

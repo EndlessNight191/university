@@ -3,6 +3,7 @@ let matrix = [
     [0, 0, 5, 7, 0],
     [0, 0, 0, 0, 0],
     [0, 2, 6, 0, 0],
+    [3, 0, 1, 0, 0],
 ]
 
 class LinkedListNode {
@@ -38,18 +39,63 @@ class LinkedListNode {
     }
 
     create(matrixe){
-        for(stroke of martixe){
-           for(stolb of matrixe[stroke]){
+        for(let stroke in matrixe){
+           for(let stolb in matrixe[stroke]){
                if(matrixe[stroke][stolb] !== 0){
                    let valueMatrix = {
-                       row: stroke,
-                       column: stolb,
+                       row: stroke*1,
+                       column: stolb*1,
                        value: matrixe[stroke][stolb],
                    }
-                   list.append(valueMatrix)
+                   this.append(valueMatrix)
                }
            }
         }
+    }
+
+    transpon(){
+        let node = this.head
+        while(node.next){
+            [node.value.row, node.value.column] = [node.value.column, node.value.row]
+            node = node.next
+        }
+    }
+
+    plusMatrix(){
+        let node1 = this.head
+        let node2 = this.head
+
+        while(node1.next){
+            while(node2.next){
+                if(node1.value.row === node2.value.column && node1.value.column === node2.value.raw){
+                    node1.value = node1.value * node2.value
+                }
+                node2 = node2.next
+            }
+            node1 = node1.next
+        }
+
+    }
+
+    timesMatrix(){
+        let node1 = this.head
+        let node2 = this.head
+
+        while(node1.next){
+            while(node2.next){
+                if(node1.value.row === node2.value.row && node1.value.column === node2.value.column){
+                    node1.value.row = node1.value.row + node2.value.column
+                    node1.value.column = node1.value.column + node2.value.column
+                }
+                node2 = node2.next
+            }
+            node1 = node1.next
+        }
+
+    }
+
+    returns(){
+        console.log(this.head)
     }
 
 }
@@ -61,3 +107,9 @@ class LinkedList {
         this.tail = null;
     }
 }
+
+let list = new LinkedListNode
+
+list.create(matrix)
+/*list.transpon()*/
+list.returns()
